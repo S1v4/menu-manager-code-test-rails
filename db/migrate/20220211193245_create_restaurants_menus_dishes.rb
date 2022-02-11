@@ -6,13 +6,13 @@ class CreateRestaurantsMenusDishes < ActiveRecord::Migration[7.0]
     end
 
     create_table :menus do |t|
-      t.belongs_to :restaurants, index: true
+      t.belongs_to :restaurant, index: true
       t.string :name
       t.timestamps
     end
 
     create_table :dishes do |t|
-      t.belongs_to :menus, index: true
+      t.belongs_to :menu, index: true
       t.string :name
       t.decimal :price, precision: 20, scale: 2
       t.timestamps

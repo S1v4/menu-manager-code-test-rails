@@ -13,21 +13,21 @@
 ActiveRecord::Schema.define(version: 2022_02_11_193245) do
 
   create_table "dishes", force: :cascade do |t|
-    t.integer "menus_id"
+    t.integer "menu_id"
     t.string "name"
     t.decimal "price", precision: 20, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"menu_id\", \"name\"", name: "index_dishes_on_menu_id_and_name", unique: true
-    t.index ["menus_id"], name: "index_dishes_on_menus_id"
+    t.index ["menu_id", "name"], name: "index_dishes_on_menu_id_and_name", unique: true
+    t.index ["menu_id"], name: "index_dishes_on_menu_id"
   end
 
   create_table "menus", force: :cascade do |t|
-    t.integer "restaurants_id"
+    t.integer "restaurant_id"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["restaurants_id"], name: "index_menus_on_restaurants_id"
+    t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

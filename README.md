@@ -35,6 +35,7 @@ You are also free to add and remove any gems as you see fit.
 - Run `rails db:setup`
 - Start server on port 3000: `rails server -p 3000`
 - Enter restaurant's name and continue to add menus and dishes.
+- To run the test suite, use `bundle exec rspec`
 
 ## The task
 

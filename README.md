@@ -28,6 +28,14 @@ You are also free to add and remove any gems as you see fit.
 - Generate a new model: `docker-compose run web rails generate model widget name:string`
 - Run migrations: `docker-compose run web rails db:migrate`
 
+### Setup (without Docker)
+
+- Install and set Ruby 2.7.5 in working directory.
+- Run `bundle install`
+- Run `rails db:setup`
+- Start server on port 3000: `rails server -p 3000`
+- Enter restaurant's name and continue to add menus and dishes.
+
 ## The task
 
 Create a CR(UD) application to manage menus for a restaurant. This restaurant, unfortunately, has a number of rules about the menus and dishes, please see the Rules section below.

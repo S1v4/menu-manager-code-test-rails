@@ -1,0 +1,4 @@
+<%= form_for :menu, url: menus_path, method: :post do |f| %>
+  Menu Name: <%= f.text_field :name %><br />
+  <%= f.submit %>
+<% end %>

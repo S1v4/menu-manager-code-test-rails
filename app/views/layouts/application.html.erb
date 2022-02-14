@@ -11,6 +11,12 @@
   </head>
 
   <body>
+
+    <% if @error.present? %>
+      <div class="error"><%= @error %></div>
+      <hr>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

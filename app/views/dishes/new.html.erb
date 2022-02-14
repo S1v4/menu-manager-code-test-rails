@@ -1,0 +1,6 @@
+<%= form_for :dish, url: dishes_path, method: :post do |f| %>
+  Menu: <%= f.select :menu_id,  Menu.pluck(:name, :id), { include_blank: false } %><br />
+  Dish Name: <%= f.text_field :name %><br />
+  Dish Price: <%= f.number_field :price %><br />
+  <%= f.submit %>
+<% end %>

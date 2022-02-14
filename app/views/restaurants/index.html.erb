@@ -1,0 +1,30 @@
+<% if @restaurant.nil? %>
+  <h1>Menu Manager</h1>
+
+  <%= form_for :restaurant, url: restaurants_path, method: :post do |f| %>
+    What is your restaurant's name?: <%= f.text_field :name %><br />
+    <%= f.submit %>
+  <% end %>
+
+<% else %>
+  <h1>Menu Manager: <%= @restaurant.name %></h1>
+
+  <ul>
+  <% @menus.each do |menu| %>
+    <li>
+      <%= menu.name %> Menu
+      <ul>
+        <% menu.dishes.each do |dish| %>
+          <li>Dish: <%= dish.name %> ---------------- Price: <%= dish.price %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+
+  <%= link_to "Add Menu", new_menu_path %> | 
+
+  <% if @menus.any? %>
+    <%= link_to "Add Dish", new_dish_path %>
+  <% end %>
+<% end %>

@@ -1,7 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurant = Restaurant.find_by_id(current_restaurant_id)
-    @menus = @restaurant.menus.includes(:dishes)
+
+    if @restaurant.present?
+      @menus = @restaurant.menus.includes(:dishes)
+    end
   end
 
   def create
